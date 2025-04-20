@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Название вашего университета{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    {% block extra_head %}{% endblock %} {# Дополнительные стили/скрипты #}
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Название вашего университета</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Главная</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'faculties' %}">Факультеты</a></li>
+                    <li><a href="{% url 'admissions' %}">Поступающим</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {# Здесь будет контент каждой страницы #}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Название вашего университета</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'main/js/script.js' %}"></script>
+    {% block extra_scripts %}{% endblock %} {# Дополнительные скрипты #}
+</body>
+</html>

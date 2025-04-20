@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название вашего университета</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Название вашего университета</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}">Главная</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'faculties' %}">Факультеты</a></li>
+                    <li><a href="{% url 'admissions' %}">Поступающим</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Добро пожаловать!</h2>
+                <p>Узнайте больше о нашем университете и возможностях, которые он предлагает.</p>
+                <a href="#" class="button">Узнать больше</a>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="container">
+                <h2>Новости</h2>
+                <div class="news-item">
+                    <h3>Заголовок новости 1</h3>
+                    <p>Краткое описание новости 1...</p>
+                    <a href="#">Читать далее</a>
+                </div>
+                <div class="news-item">
+                    <h3>Заголовок новости 2</h3>
+                    <p>Краткое описание новости 2...</p>
+                    <a href="#">Читать далее</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Название вашего университета</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'main/js/script.js' %}"></script>
+</body>
+</html>
