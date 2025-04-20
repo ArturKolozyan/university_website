@@ -1,10 +1,65 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Контакты - Название вашего университета{% endblock %}
+{% block title %}Контакты университета{% endblock %}
 
 {% block content %}
+<section class="page-header">
     <div class="container">
-        <h2>Контакты</h2>
-        <p>Контактная информация...</p>
+        <h1>Контакты</h1>
+        <p>Как с нами связаться</p>
     </div>
+</section>
+
+<section class="text-content">
+    <div class="container">
+        <article class="contact-section">
+            <h2>Основные контакты</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Адрес</h3>
+                    <p>г. Город, ул. Университетская, 1</p>
+                    <p>Корпус 1: ул. Университетская, 1</p>
+                    <p>Корпус 2: ул. Академическая, 15</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Телефоны</h3>
+                    <p>Приемная ректора: +7 (123) 456-78-90</p>
+                    <p>Приемная комиссия: +7 (123) 456-78-91</p>
+                    <p>Учебный отдел: +7 (123) 456-78-92</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>Общие вопросы: info@university.ru</p>
+                    <p>Поступление: admission@university.ru</p>
+                    <p>Преподавателям: hr@university.ru</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="contact-section">
+            <h2>Режим работы</h2>
+            <table class="schedule-table">
+                <tr>
+                    <td>Понедельник-пятница</td>
+                    <td>8:30 - 17:30</td>
+                </tr>
+                <tr>
+                    <td>Суббота</td>
+                    <td>9:00 - 15:00</td>
+                </tr>
+                <tr>
+                    <td>Воскресенье</td>
+                    <td>Выходной</td>
+                </tr>
+            </table>
+        </article>
+
+        <article class="contact-section">
+            <h2>Как добраться</h2>
+            <p>Университет расположен в центре города. Ближайшая станция метро "Университетская".</p>
+            <p>Автобусы: 1, 5, 10, 23 (остановка "Университет")</p>
+            <p>Трамваи: 3, 7 (остановка "Академическая")</p>
+        </article>
+    </div>
+</section>
 {% endblock %}

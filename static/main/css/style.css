@@ -1,91 +1,414 @@
-/* (Тот же CSS код, что и раньше) */
-/* Общие стили */
-body {
-    font-family: sans-serif;
+/* Базовые стили */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #fff;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Шапка сайта */
-header {
-    background: #333;
-    color: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-header h1 {
-    margin: 0;
-    float: left;
-}
-
-header nav {
-    float: right;
-}
-
-header nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-header nav li {
-    display: inline;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-header nav a {
-    color: #fff;
+/* Шапка */
+.header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo .logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-light);
     text-decoration: none;
 }
 
-/* Основной контент */
-main {
-    padding: 20px 0;
+.main-nav ul {
+    display: flex;
+    list-style: none;
 }
 
-.hero {
-    background: #e4e4e4;
-    padding: 50px 0;
+.main-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--secondary-color);
+}
+
+/* Основное содержимое */
+.main-content {
+    padding: 40px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.lead-text {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Приветственная секция */
+.welcome-section {
+    text-align: center;
+    padding: 60px 0;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Особенности */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    background-color: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     text-align: center;
 }
 
-.hero h2 {
-    font-size: 3em;
-    margin-bottom: 10px;
+.feature-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
 }
 
-.button {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.news {
-    padding: 20px 0;
+/* Новости */
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .news-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background: #fff;
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-/* Подвал сайта */
-footer {
-    background: #333;
-    color: #fff;
+.news-date {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+/* Страничные заголовки */
+.page-header {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 60px 0;
     text-align: center;
-    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+/* Текстовый контент */
+.text-content {
+    line-height: 1.8;
+}
+
+.text-content h2 {
+    margin: 30px 0 20px;
+    color: var(--primary-color);
+}
+
+.text-content h3 {
+    margin: 20px 0 15px;
+}
+
+/* Списки */
+.achievements-list {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.achievements-list li {
+    margin-bottom: 10px;
+}
+
+.steps-list {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.steps-list li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 30px;
+    min-height: 40px;
+}
+
+.steps-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Карточки */
+.requirements-grid,
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.requirement-card,
+.contact-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Таблицы */
+.price-table,
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--text-light);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.price-table th,
+.price-table td,
+.schedule-table th,
+.schedule-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.price-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.price-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Факультеты */
+.faculty-card {
+    display: flex;
+    margin-bottom: 30px;
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.faculty-icon {
+    font-size: 3em;
+    padding: 30px;
+    background: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faculty-info {
+    padding: 25px;
+    flex: 1;
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--text-light);
+    padding: 40px 0 20px;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.footer-column h4 {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column a {
+    color: var(--text-light);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    padding: 5px 10px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+
+.btn-large {
+    padding: 12px 30px;
+    font-size: 1.1em;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .main-nav {
+        margin: 20px 0;
+    }
+
+    .features-grid,
+    .news-grid,
+    .requirements-grid,
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .faculty-card {
+        flex-direction: column;
+    }
+
+    .faculty-icon {
+        padding: 15px;
+    }
 }
